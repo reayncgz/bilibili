@@ -1,6 +1,6 @@
+import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
-import Resize from '@/components/resize/Resize';
 import ReduxProvider from '@/store/ReduxProvider';
 import '@/styles/global.css';
 import '@/styles/font.css';
@@ -27,8 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Resize />
         <ReduxProvider>{children}</ReduxProvider>
+        <Script src="/resize.js" />
       </body>
     </html>
   );
